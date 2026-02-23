@@ -1,5 +1,18 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "test",
+      "email": "test@gmail.com",
+      "phone": "test"
+    },
+    {
+      "id": 2,
+      "name": "test",
+      "email": "test@gmail.com",
+      "phone": "test"
+    }
+  ],
   "wallets": [],
   "operations": []
 }

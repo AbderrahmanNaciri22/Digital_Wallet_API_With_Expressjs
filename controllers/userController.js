@@ -1,15 +1,27 @@
 const { readDB, writeDB } = require("../services/db.service");
+const db = readDB();
 
 
-// res.send('Users route is working');
 exports.createUser = (req,res)=>{
+        if (!req.body)
+     return res.status(400).json({ message: "Body is required" });
     
+     const { name, email, phone } = req.body;
+     user = {
+        id :db.users.length + 1, 
+        name,
+        email,
+        phone,
+     }
+      db.users.push(user);
+      writeDB(db);
+      return res.status(201).json(user);
 }
 exports.getUsers = (req,res)=>{
     res.send('get route is working')
 }
 exports.getUserById = (req,res)=>{
-    // res.send('get by id '+req.params.id+ ' route is working')
+
 
 };
 exports.updateUser = (req,res)=>{
