@@ -4,7 +4,7 @@ const db = readDB();
 
 exports.createUser = (req,res)=>{
         if (!req.body)
-     return res.status(400).json({ message: "Body is required" });
+              return res.status(400).json({ message: "Body is required" });
     
      const { name, email, phone } = req.body;
      user = {
@@ -18,10 +18,11 @@ exports.createUser = (req,res)=>{
       return res.status(201).json(user);
 }
 exports.getUsers = (req,res)=>{
-    res.send('get route is working')
+    // res.send(db.users);
+    return res.status(200).json(db.users);
+
 }
 exports.getUserById = (req,res)=>{
-
 
 };
 exports.updateUser = (req,res)=>{
