@@ -24,11 +24,36 @@ exports.getUsers = (req,res)=>{
 }
 exports.getUserById = (req,res)=>{
 
+    const id = parseInt(req.params.id);
+    if(isNaN(id)){
+     return   res.status(400).json("id required");
+    };
+
+    const user = db.users.find(u=>u.id ===id);
+     if (!user)
+        return res.status(400).json("user not found")
+
+    return res.status(200).json(user);
+
 };
 exports.updateUser = (req,res)=>{
     
 
 }
 exports.deleteUser = (req,res)=>{
+    const id = parseInt(req.params.id);
+    const index = db.users.findIndex(u => u.id === id);
+    if(isNaN(id))
+        return res.status(400).json("id required");
+
+    const user = db.users.find(u=>u.id === id);
+
+    if(!user)
+        return res.status(400).json("user not found");
+    
+    db.users.splice(index,1);
+    writeDB(db);
+    return res.status(200).json("user delete successfuly");
+
 
 }
