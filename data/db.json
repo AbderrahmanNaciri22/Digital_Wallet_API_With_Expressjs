@@ -5,6 +5,12 @@
       "name": "test",
       "email": "test@gmail.com",
       "phone": "test"
+    },
+        {
+      "id": 3,
+      "name": "test",
+      "email": "test@gmail.com",
+      "phone": "test"
     }
   ],
   "wallets": [],

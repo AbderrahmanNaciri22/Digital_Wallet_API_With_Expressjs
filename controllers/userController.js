@@ -37,9 +37,29 @@ exports.getUserById = (req,res)=>{
 
 };
 exports.updateUser = (req,res)=>{
-    
+    const id = parseInt(req.params.id);
+    const users = readDB();
+    const { name, email, phone } = req.body;
 
-}
+    if(isNaN(id)){
+       return   res.status(400).json("id required");
+    }
+    const index = db.users.findIndex(u => u.id === id);
+
+    if(index === -1){
+         return   res.status(404).json("id not found");
+    }
+
+    user = db.users[index];
+    user.name = name;
+    user.email = email;
+    user.phone = phone;
+    res.send(user);
+        
+
+    };
+
+
 exports.deleteUser = (req,res)=>{
     const id = parseInt(req.params.id);
     const index = db.users.findIndex(u => u.id === id);
@@ -50,7 +70,7 @@ exports.deleteUser = (req,res)=>{
 
     if(!user)
         return res.status(400).json("user not found");
-    
+
     db.users.splice(index,1);
     writeDB(db);
     return res.status(200).json("user delete successfuly");
