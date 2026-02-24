@@ -91,6 +91,18 @@
       "user_id": 1,
       "name": "test",
       "sold": 0
+    },
+    {
+      "id": 5,
+      "user_id": 3,
+      "name": "wallet test",
+      "sold": 0
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "name": "wallet 31",
+      "sold": 0
     }
   ],
   "operations": []

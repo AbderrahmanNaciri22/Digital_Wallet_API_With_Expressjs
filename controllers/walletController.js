@@ -14,7 +14,6 @@ exports.createWallet = (req , res)=>{
         name,
         sold:0,
     }
-    console.log("Body:", req.body);
     db.wallets.push(wallet);
     writeDB(db)
     res.send(wallet);
