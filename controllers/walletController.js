@@ -56,5 +56,15 @@ exports.updateWallet = (req , res)=>{
 }
 
 exports.deleteWallet = (req , res)=>{
+     const id = parseInt(req.params.id);
+     if(isNaN(id)){
+       return   res.status(400).json("id required");
+    }
+    index = db.wallets.findIndex(u => u.id === id);
+    db.wallets.splice(index,1);
+    writeDB(db);
+    return res.status(200).json("wallet delete successfuly");
+
+
 
 }
