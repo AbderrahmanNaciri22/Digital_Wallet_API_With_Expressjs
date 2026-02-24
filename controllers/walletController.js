@@ -2,7 +2,6 @@ const { readDB, writeDB } = require("../services/db.service");
 const db = readDB();
 
 
-
 exports.createWallet = (req , res)=>{
     if (!req.body)
               return res.status(400).json({ message: "Body is required" });
@@ -22,7 +21,7 @@ exports.createWallet = (req , res)=>{
 }
 
 exports.getWallets = (req,res)=>{
-
+    res.send(db.wallets);
 }
 
 exports.getWalletById = (req , res)=>{
