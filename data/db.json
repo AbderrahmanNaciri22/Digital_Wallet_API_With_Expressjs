@@ -95,8 +95,8 @@
     {
       "id": 2,
       "user_id": 2,
-      "name": "test",
-      "sold": 0
+      "name": "wallet",
+      "sold": 200
     }
   ],
   "operations": []

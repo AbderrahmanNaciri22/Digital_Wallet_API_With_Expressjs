@@ -38,7 +38,7 @@ exports.getUserById = (req,res)=>{
 };
 exports.updateUser = (req,res)=>{
     const id = parseInt(req.params.id);
-    const users = readDB();
+    // const users = readDB();
     const { name, email, phone } = req.body;
 
     if(isNaN(id)){

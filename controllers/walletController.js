@@ -25,10 +25,33 @@ exports.getWallets = (req,res)=>{
 }
 
 exports.getWalletById = (req , res)=>{
+          const id = parseInt(req.params.id);
+              if(isNaN(id)){
+                return   res.status(400).json("id required");
+             };
+      wallet = db.wallets.find(u=>u.id == id);
+     if (!wallet)
+        return res.status(400).json("wallet not found")
 
+     res.send(wallet);
+    
 }
 
 exports.updateWallet = (req , res)=>{
+        const id = parseInt(req.params.id);
+        const { user_id, name, sold } = req.body;
+        
+    if(isNaN(id)){
+       return   res.status(400).json("id required");
+    }
+    index = db.wallets.findIndex(u => u.id === id);
+    wallet = db.wallets[index];
+    wallet.name = name;
+    wallet.user_id = user_id;
+    wallet.sold = sold;
+
+    writeDB(db);
+    res.send(wallet)
 
 }
 
