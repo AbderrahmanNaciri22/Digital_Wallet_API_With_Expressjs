@@ -63,7 +63,45 @@ exports.deleteWallet = (req , res)=>{
     db.wallets.splice(index,1);
     writeDB(db);
     return res.status(200).json("wallet delete successfuly");
-
-
-
 }
+
+
+exports.walletAction =(req,res)=>{
+     const id = parseInt(req.params.id);
+     const action = req.params.action;
+         const {amount} = req.body;
+
+    index = db.wallets.findIndex(w => w.id === id );
+    if(index == -1){
+        return res.status(404).json("wallet id is not exist");
+    }
+    wallet = db.wallets[index]
+    if(action == "deposit"){
+            wallet.sold += amount;
+    }else if(action == "withdraw"){
+        wallet.sold -= amount;
+    }else{
+        return res.status(404).json("action no valide");
+    }
+
+    writeDB(db)
+    return res.status(200).json(wallet);
+    
+}
+// exports.withdraw = (req,res) =>{
+//     const id = parseInt(req.params.id);
+//          const {amount} = req.body;
+
+//      if(isNaN(id)){
+//        return   res.status(400).json("id required");
+//     }
+
+//     index = db.wallets.findIndex(w => w.id === id );
+//     if(index == -1){
+//         return res.status(404).json("wallet id is not exist");
+//     }
+//     wallet = db.wallets[index]
+//     wallet.sold -= amount;
+//     writeDB(db)
+//     return res.status(200).json(wallet);
+// }

@@ -83,6 +83,16 @@
       "name": "test33",
       "email": "test45gmail.com",
       "phone": "test33"
+    },
+    {
+      "id": 15,
+      "name": "Abderrahman Naciri",
+      "email": "abderrahman113@gmail.com"
+    },
+    {
+      "id": 16,
+      "name": "Abderrahman Naciri",
+      "email": "abdo@gmail.com"
     }
   ],
   "wallets": [
@@ -90,7 +100,7 @@
       "id": 1,
       "user_id": 1,
       "name": "test",
-      "sold": 0
+      "sold": 4
     },
     {
       "id": 5,
@@ -138,6 +148,24 @@
       "id": 9,
       "user_id": 2,
       "name": "wallet32",
+      "sold": 0
+    },
+    {
+      "id": 10,
+      "user_id": 2,
+      "name": "wallet 99",
+      "sold": 0
+    },
+    {
+      "id": 11,
+      "user_id": "2",
+      "name": "wallet 19",
+      "sold": 0
+    },
+    {
+      "id": 12,
+      "user_id": 2,
+      "name": "wallet 442",
       "sold": 0
     }
   ],
