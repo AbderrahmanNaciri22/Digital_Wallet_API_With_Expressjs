@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require("../controllers/walletController");
 const nameMiddlewareWallet  = require("../middleware/nameMiddlewareWallet");
 const userCheckMiddlewareWallet  = require("../middleware/userCheckMiddlewareWallet");
-const validateMiddlewareWallet = require("../middleware/validateMiddlewareWallet");
+const validateMiddlewareWallet = require("../middleware/validateAmountmiddleware");
 
 
 

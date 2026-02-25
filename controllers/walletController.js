@@ -88,6 +88,12 @@ exports.walletAction =(req,res)=>{
     return res.status(200).json(wallet);
     
 }
+
+
+
+
+
+
 // exports.withdraw = (req,res) =>{
 //     const id = parseInt(req.params.id);
 //          const {amount} = req.body;
